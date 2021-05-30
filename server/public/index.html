@@ -11,6 +11,25 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    
+    <header>To Do List</header>
+    <section>
+        <label for="taskIn">Enter New Task:</label>
+        <input type="text" id="taskIn" placeholder="create task here">
+        <button id="submitBtn">Submit</button>
+    </section>
+        <section>
+            <h2>Tasks</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Completed</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody id="viewList">
+              </tbody>
+            </table>
+          </section>
 </body>
 </html>
