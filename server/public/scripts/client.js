@@ -13,6 +13,11 @@ $(document).ready(function () {
 function clickListeners(){
     // on click update DOM with inputted task
     $('#addBtn').on('click', handleAdd())
+
+    // dynamic click listener for delete button
+    $('.viewList').on('click', '.deleteBtn', deleteHandler())
+
+    // dynamic click listener for checkbox
 }
 
 
@@ -67,6 +72,7 @@ function handleAdd(){
     addTask(newTask);
 } // end handleAdd
 
+// POST route request
 function addTask(newTask){
     console.log("in addTask", newTask);
     // ajax call to server to post new task from client side
@@ -83,4 +89,26 @@ function addTask(newTask){
           console.log('Error in POST', error)
           alert('Unable to add new test');
         });
-}
+} // end addTask
+
+
+// function for click listener deleteBtn
+function deleteHandler() {
+    console.log("clicked delete button in tasks");
+    deleteTask($(this).data("id"))
+} // end deleteHandler
+
+// DELETE Route request
+function deleteTask(taskId) {
+    $.ajax({
+      method: "DELETE",
+      url: `/list/${taskId}`,
+    })
+      .then((response) => {
+        console.log(`deleted id, ${taskId}`);
+        getKoalas();
+      })
+      .catch((error) => {
+        console.log("There was an Error", error);
+      });
+} // end deleteTask
