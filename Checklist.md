@@ -20,14 +20,14 @@ Server Side - CRUD
 
     [ ] create routes in list_router.js
     [x] create GET route using pool to draw from SQL database
-    [ ] create POST route with pool
-    [ ] make PUT route to toggle boolean
+    [x] create POST route with pool
+    [x] make PUT route to toggle boolean
     [ ] make DELETE route to delete database
 
 Client Side - CRUD
 
-    [ ] make html: create a header 'to do list' , make a input 'task' , create a button 'submit'
-    [ ] give them proper id/class || also make an output via table tags with ids and classes 
+    [x] make html: create a header 'to do list' , make a input 'task' , create a button 'submit'
+    [x] give them proper id/class || also make an output via table tags with ids and classes 
 
     [ ] make a function to update DOM via append || append complete checkbox and delete button here
     [ ] connect GET route
