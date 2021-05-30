@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 });
 
 // POST Route
-koalaRouter.post('/',  (req, res) => {
+router.post('/',  (req, res) => {
     let newTask = req.body;
     console.log(`Adding new task`, newTask);
   
@@ -40,8 +40,8 @@ koalaRouter.post('/',  (req, res) => {
       });
   });
 
-// PUT
-koalaRouter.put('/:id', (req, res) =>{
+// PUT Route
+router.put('/:id', (req, res) =>{
     const taskListUpdate = req.params.id;
     console.log('task updated to complete', taskListUpdate);
     // make queryString target ready-to-transfer column and make boolean true
@@ -57,3 +57,24 @@ koalaRouter.put('/:id', (req, res) =>{
         res.sendStatus(500); // shows error on this server route
     })
 })
+
+// DELETE Route
+router.delete('/:id', (req, res) => {
+    // Grab the task to delete
+    const taskToDelete = req.params.id
+    const queryText = `DELETE FROM "toDoList" WHERE "toDoList".id = $1;`;
+    console.log('task to Delete', taskToDelete)
+    // taskToDelete must be sent in an array
+    pool.query(queryText, [taskToDelete])
+    .then(result => {
+        console.log(`Deleted task with id ${taskToDelete}`);
+        // send OK message
+        res.sendStatus(200)
+    }).catch(error => {
+        console.log(error);
+        // Send back a 500 status error
+        res.sendStatus(500)
+    })
+})
+
+module.exports = router;
