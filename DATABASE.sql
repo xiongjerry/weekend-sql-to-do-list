@@ -1,0 +1,4 @@
+CREATE TABLE "toDoList" (
+	"id" SERIAL PRIMARY KEY,
+	"task" VARCHAR (100),
+	"completed" BOOLEAN DEFAULT FALSE);

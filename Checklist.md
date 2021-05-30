@@ -7,17 +7,18 @@ Initialization
     [x] Make server.js, .gitignore (put node_modules/ in .gitignore), package.json (npm init --yes)
     [x] npm install, npm install express and npm install pg, touch DATABASE.sql
     [x] make database on postico
-    [ ] make public files, touch style.css , client.js , jquery.js , bootstrap.css
-    [ ] link public files on html
+    [x] make public files, touch style.css , client.js , jquery.js , bootstrap.css
+    [x] link public files on html
     
-    [ ] connect server to database via pool
-    [ ] copy SQL table on database into DATABASE.sql
-    [ ] In router folder, touch list_router.js
-    [ ] setup server with app and express on server.js
-    [ ] create imports into list_router.js
+    [x] connect server to database via pool
+    [x] copy SQL table on database into DATABASE.sql
+    [x] In router folder, touch list_router.js
+    [x] setup server with app and express on server.js
+    [x] create imports into list_router.js
 
 Server Side - CRUD
 
+    [ ] create routes in list_router.js
     [ ] create GET route using pool to draw from SQL database
     [ ] create POST route with pool
     [ ] make PUT route to toggle boolean
