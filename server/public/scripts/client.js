@@ -12,10 +12,10 @@ $(document).ready(function () {
 
 function clickListeners(){
     // on click update DOM with inputted task
-    $('#addBtn').on('click', handleAdd())
+    $('#addBtn').on('click', handleAdd)
 
     // dynamic click listener for delete button
-    $('.viewList').on('click', '.deleteBtn', deleteHandler())
+    $('#viewList').on('click', '.deleteBtn', deleteHandler)
 
     // dynamic click listener for checkbox
 }
@@ -70,6 +70,9 @@ function handleAdd(){
     }
     // run addTask with newTask variable
     addTask(newTask);
+
+    // empty input task
+    $('#taskIn').val('')
 } // end handleAdd
 
 // POST route request
@@ -102,11 +105,11 @@ function deleteHandler() {
 function deleteTask(taskId) {
     $.ajax({
       method: "DELETE",
-      url: `/list/${taskId}`,
+      url: `/list/${taskId}`
     })
       .then((response) => {
         console.log(`deleted id, ${taskId}`);
-        getKoalas();
+        getTaskList();
       })
       .catch((error) => {
         console.log("There was an Error", error);
