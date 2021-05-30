@@ -1,11 +1,11 @@
 Initialization
     
-    [ ] Make Folders named server: mkdir server, cd server --> mkdir modules , mkdir public , mkdir routes
-    [ ] cd modules , touch pool.js
-    [ ] cd server/public/ , touch index.html , mkdir scripts , mkdir styles ,  mkdir vendors
+    [x] Make Folders named server: mkdir server, cd server --> mkdir modules , mkdir public , mkdir routes
+    [x] cd modules , touch pool.js
+    [x] cd server/public/ , touch index.html , mkdir scripts , mkdir styles ,  mkdir vendors
 
-    [ ] Make server.js, .gitignore (put node_modules in .gitignore), package.json (npm init --yes)
-    [ ] npm install, npm install express and npm install pg, touch DATABASE.sql
+    [x] Make server.js, .gitignore (put node_modules/ in .gitignore), package.json (npm init --yes)
+    [x] npm install, npm install express and npm install pg, touch DATABASE.sql
     [x] make database on postico
     [ ] make public files, touch style.css , client.js , jquery.js , bootstrap.css
     [ ] link public files on html
