@@ -54,9 +54,9 @@ function renderTaskList( lists ){
       <td>${list.task}</td>
       <td class="update">
       ${list.completed}
-      <button class="checkTask" data-id="${list.id}">Completed!</button>
+      <button class="checkTask btn btn-success" data-id="${list.id}">Completed!</button>
       </td>
-      <td><button class="deleteBtn" data-id="${list.id}">Delete</button></td>
+      <td><button class="deleteBtn btn btn-secondary" data-id="${list.id}">Delete</button></td>
     </tr>
     `);
     } // end for loop
