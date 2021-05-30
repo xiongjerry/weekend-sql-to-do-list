@@ -33,8 +33,8 @@ Client Side - CRUD
     [x] connect GET route
     [x] make click listener function
     [x] connect POST route to submit button || Post route should change DOM with some indicator
-    [ ] connect PUT route
-    [ ] connect DELETE route
+    [x] connect PUT route
+    [x] connect DELETE route
 
 Stretch
 

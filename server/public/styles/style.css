@@ -1,0 +1,14 @@
+.completed {
+    background-color: lightpink;
+}
+
+header {
+    border: blue 5px solid;
+    text-align: center;
+    background-color: lightskyblue;
+    padding: 3em;
+}
+
+section {
+    padding: 1em;
+}

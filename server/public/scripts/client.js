@@ -18,6 +18,7 @@ function clickListeners(){
     $('#viewList').on('click', '.deleteBtn', deleteHandler)
 
     // dynamic click listener for checkbox
+    $('#viewList').on('click', '.checkTask', updateTaskHandler)
 }
 
 
@@ -39,6 +40,7 @@ function getTaskList(){
     });
 } // end getTaskList
 
+// renders data to DOM
 function renderTaskList( lists ){
     // empty DOM to update after each input
     $('#viewList').empty();
@@ -50,9 +52,9 @@ function renderTaskList( lists ){
     $('#viewList').append(`
     <tr>
       <td>${list.task}</td>
-      <td>
+      <td class="update">
       ${list.completed}
-      <input type="checkbox" class="checkTask" data-id="${list.id}">
+      <button class="checkTask" data-id="${list.id}">Completed!</button>
       </td>
       <td><button class="deleteBtn" data-id="${list.id}">Delete</button></td>
     </tr>
@@ -109,9 +111,37 @@ function deleteTask(taskId) {
     })
       .then((response) => {
         console.log(`deleted id, ${taskId}`);
+        // Call getTaskList to update DOM
         getTaskList();
       })
       .catch((error) => {
         console.log("There was an Error", error);
       });
 } // end deleteTask
+
+
+// function for updateTaskHandler click listener
+function updateTaskHandler(){
+    let id = $(this).data('id');
+    updateTask(id);
+
+    // Notification of completion
+    alert('NICE JOB!')
+
+} // end updateTaskHandler
+
+// PUT route request
+function updateTask(taskId){
+    $.ajax({
+        method: 'PUT',
+        url: `/list/${taskId}`
+      }).then( (response) => {
+        console.log('task update:', response);
+        // update DOM
+        getTaskList();
+    }).catch(err =>{
+        console.log('task was not updated');
+        alert('there was an error with updating')
+    })
+} // end updateTask
+

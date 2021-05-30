@@ -45,7 +45,7 @@ router.put('/:id', (req, res) =>{
     const taskListUpdate = req.params.id;
     console.log('task updated to complete', taskListUpdate);
     // make queryString target ready-to-transfer column and make boolean true
-    const queryString = `UPDATE "toDoList" SET "completed"=NOT "completed" WHERE "toDoList".id = $1;`; 
+    const queryString = `UPDATE "toDoList" SET "completed"= 'Yup!' WHERE "toDoList".id = $1;`; 
 
     pool.query(queryString, [taskListUpdate])
     .then( response => {
