@@ -10,6 +10,12 @@ $(document).ready(function () {
   getTaskList();
 })
 
+function clickListeners(){
+    // on click update DOM with inputted task
+    $('#addBtn').on('click', handleAdd())
+}
+
+
 // GET route request
 function getTaskList(){
     console.log("Displaying Task List");
@@ -46,5 +52,35 @@ function renderTaskList( lists ){
       <td><button class="deleteBtn" data-id="${list.id}">Delete</button></td>
     </tr>
     `);
+    } // end for loop
+} // end renderTaskList
+
+
+// function for click listener to add task
+function handleAdd(){
+    console.log('clicked on Submit button');
+
+    let newTask = {
+        task: $('#taskIn').val()
     }
+    // run addTask with newTask variable
+    addTask(newTask);
+} // end handleAdd
+
+function addTask(newTask){
+    console.log("in addTask", newTask);
+    // ajax call to server to post new task from client side
+    
+    $.ajax({
+        type: 'POST',
+        url: '/list',
+        data: newTask,
+        }).then(function(response) {
+          console.log('Response from server.', response);
+        // run getTaskList to update DOM
+          getTaskList();
+        }).catch(function(error) {
+          console.log('Error in POST', error)
+          alert('Unable to add new test');
+        });
 }
