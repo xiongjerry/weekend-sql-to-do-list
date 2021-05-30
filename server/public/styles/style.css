@@ -1,14 +1,24 @@
-.completed {
-    background-color: lightpink;
+.checkTask {
+    margin-left: 2em;
 }
 
 header {
-    border: blue 5px solid;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-    background-color: lightskyblue;
+    background-color: #d1e7d1;
+    border: rgb(25, 135, 84) 5px solid;
     padding: 3em;
 }
 
 section {
-    padding: 1em;
+    padding: 2.5em;
+}
+
+#addBtn {
+    margin-top: 1em;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: lightskyblue;
 }
