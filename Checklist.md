@@ -19,7 +19,7 @@ Initialization
 Server Side - CRUD
 
     [ ] create routes in list_router.js
-    [ ] create GET route using pool to draw from SQL database
+    [x] create GET route using pool to draw from SQL database
     [ ] create POST route with pool
     [ ] make PUT route to toggle boolean
     [ ] make DELETE route to delete database
