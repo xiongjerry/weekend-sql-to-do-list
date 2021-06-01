@@ -1,9 +1,12 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+To Do List CRUD APP
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+In this project, I've used JQuery and SQL to setup a website that makes a to do list.
+Problems I've encountered was how to make a meaningful PUT route that updates the DOM.
+At first I wanted to make a boolean that shows up on the DOM but thought that the idea
+of having true and false appear in the app was too generic, so I decided to make it a
+VARCHAR that defaulted to 'Not yet'. Then if clicked it would change to 'Yup'. This was
+one of the main problems I face while creating this website from scratch.
